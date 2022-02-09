@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   static const FirebaseConfig firebaseConfig = FirebaseConfig();
 
-  static const TextStyle titleTextStyle = TextStyle(
+  static TextStyle largeTextStyle = GoogleFonts.raleway(
     fontSize: 32,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w900,
+    letterSpacing: 2.0,
     color: Colors.white,
   );
-  static const TextStyle defaultTextStyle = TextStyle(
-    fontSize: 16,
+  static TextStyle defaultTextStyle = GoogleFonts.raleway(
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     letterSpacing: 1.5,
+    color: Colors.white,
+  );
+  static TextStyle smallTextStyle = GoogleFonts.raleway(
+    fontSize: 14,
     color: Colors.white,
   );
 }

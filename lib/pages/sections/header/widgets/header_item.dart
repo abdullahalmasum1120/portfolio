@@ -36,12 +36,12 @@ class _HeaderItemState extends State<HeaderItem> {
       cursor: SystemMouseCursors.click,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-          vertical: 20,
+          horizontal: 16,
+          vertical: 16,
         ),
         child: Text(
           widget.text,
-          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: isHovered
                     ? widget.hoverColor
                     : Theme.of(context).textTheme.bodyText2!.color,

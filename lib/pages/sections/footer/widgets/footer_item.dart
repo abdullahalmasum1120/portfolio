@@ -27,7 +27,7 @@ class FooterItem extends StatelessWidget {
             ),
             Text(
               title,
-              style: GoogleFonts.oswald(
+              style: GoogleFonts.raleway(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,

@@ -18,9 +18,9 @@ class Home extends StatelessWidget {
         children: const [
           HeaderSection(),
           IntroSection(),
-          SkillsSection(),
-          ProjectSection(),
-          FooterSection(),
+          // SkillsSection(),
+          // ProjectSection(),
+          // FooterSection(),
         ],
       ),
     );

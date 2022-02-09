@@ -26,16 +26,17 @@ class MyApp extends StatelessWidget {
       title: "Abdullah Al Masum",
       theme: Theme.of(context).copyWith(
         scaffoldBackgroundColor: const Color(0xFF07111A),
-        textTheme: const TextTheme(
-          bodyText1: Constants.titleTextStyle,
-          bodyText2: Constants.defaultTextStyle,
+        textTheme: TextTheme(
+          bodyLarge: Constants.largeTextStyle,
+          bodyMedium: Constants.defaultTextStyle,
+          bodySmall: Constants.smallTextStyle,
         ),
       ),
       builder: (context, widget) => ResponsiveWrapper.builder(
         const Home(),
         defaultScale: true,
         breakpoints: [
-          const ResponsiveBreakpoint.resize(600, name: MOBILE),
+          const ResponsiveBreakpoint.resize(500, name: MOBILE),
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
         ],
       ),

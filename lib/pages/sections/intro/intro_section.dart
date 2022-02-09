@@ -9,9 +9,9 @@ class IntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
+      // color: Colors.amber,
       width: double.infinity,
-      height: MediaQuery.of(context).size.height - 56,
+      height: MediaQuery.of(context).size.height,
       child: ResponsiveRowColumn(
         layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE)
             ? ResponsiveRowColumnType.COLUMN
@@ -25,7 +25,7 @@ class IntroSection extends StatelessWidget {
           ResponsiveRowColumnItem(
             child: RightIntro(),
             rowFlex: 1,
-            columnFlex: 2,
+            columnFlex: 1,
           ),
         ],
       ),

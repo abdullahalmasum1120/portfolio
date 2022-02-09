@@ -5,13 +5,13 @@ class Constants {
   static const FirebaseConfig firebaseConfig = FirebaseConfig();
 
   static TextStyle largeTextStyle = GoogleFonts.raleway(
-    fontSize: 32,
+    fontSize: 48,
     fontWeight: FontWeight.w900,
     letterSpacing: 2.0,
     color: Colors.white,
   );
   static TextStyle defaultTextStyle = GoogleFonts.raleway(
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
     letterSpacing: 1.5,
     color: Colors.white,
@@ -19,6 +19,7 @@ class Constants {
   static TextStyle smallTextStyle = GoogleFonts.raleway(
     fontSize: 14,
     color: Colors.white,
+    letterSpacing: 1.5,
   );
 }
 

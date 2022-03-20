@@ -3,13 +3,19 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   static const FirebaseConfig firebaseConfig = FirebaseConfig();
-
-  static TextStyle largeTextStyle = GoogleFonts.raleway(
+  static TextStyle xLargeTextStyle = GoogleFonts.raleway(
     fontSize: 48,
     fontWeight: FontWeight.w900,
-    letterSpacing: 2.0,
+    letterSpacing: 4.0,
     color: Colors.white,
   );
+  static TextStyle largeTextStyle = GoogleFonts.raleway(
+    fontSize: 36,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 2.5,
+    color: Colors.white,
+  );
+
   static TextStyle defaultTextStyle = GoogleFonts.raleway(
     fontSize: 20,
     fontWeight: FontWeight.bold,

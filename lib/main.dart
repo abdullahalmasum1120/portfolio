@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         defaultScale: true,
         breakpoints: [
           const ResponsiveBreakpoint.resize(500, name: MOBILE),
+          const ResponsiveBreakpoint.resize(800, name: TABLET),
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
         ],
       ),

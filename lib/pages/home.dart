@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/sections/expariences/experiences.dart';
 import 'package:portfolio/pages/sections/header/widgets/drawer.dart';
 import 'package:portfolio/pages/sections/footer/footer_section.dart';
 import 'package:portfolio/pages/sections/header/header_section.dart';
@@ -11,16 +12,17 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       endDrawerEnableOpenDragGesture: false,
-      endDrawer: const MyDrawer(),
-      body: ListView(
-        children: const [
-          HeaderSection(),
-          IntroSection(),
-          SkillsSection(),
-          //TODO: ProjectSection(),
-          FooterSection(),
+      endDrawer: MyDrawer(),
+      body: CustomScrollView(
+        slivers: [
+          SliverHeader(),
+          SliverIntro(),
+          SliverProjects(),
+          SliverSkills(),
+          // SliverExperiences(),
+          // FooterSection(),
         ],
       ),
     );

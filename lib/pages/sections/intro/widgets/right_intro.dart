@@ -7,17 +7,12 @@ class RightIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
+      height: MediaQuery.of(context).size.height,
       width: double.infinity,
-      padding: const EdgeInsets.only(right: 32),
-      // color: Colors.deepOrangeAccent,
-      child: ResponsiveWrapper(
-        backgroundColor: Colors.white,
-        alignment: Alignment.topCenter,
-        child: Image.asset(
-          "assets/images/user_image.png"
-        ),
-        minWidth: 480,
+      alignment: Alignment.center,
+      child: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Image.asset("assets/images/user_image.png"),
       ),
     );
   }

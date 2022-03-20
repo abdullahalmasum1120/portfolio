@@ -1,51 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/sections/skills/widgets/skill_item.dart';
+import 'package:portfolio/utils/constants.dart';
 
-class SkillsSection extends StatelessWidget {
-  const SkillsSection({Key? key}) : super(key: key);
+class SliverSkills extends StatelessWidget {
+  const SliverSkills({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.yellow,
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height,
-      padding: EdgeInsets.all(16),
-      child: Column(
-        children: [
-          Text(
-            "Skills",
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-          SizedBox(
-            height: 80,
-          ),
-          SkillItem(
-            percentage: 90,
-            skill: "Dart",
-          ),
-          SizedBox(
-            height: 32,
-          ),
-          SkillItem(
-            percentage: 70,
-            skill: "HTML",
-          ),
-          SizedBox(
-            height: 32,
-          ),
-          SkillItem(
-            percentage: 70,
-            skill: "Flutter",
-          ),
-          SizedBox(
-            height: 32,
-          ),
-          SkillItem(
-            percentage: 75,
-            skill: "Java",
-          ),
-        ],
+    return SliverToBoxAdapter(
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Text(
+              "Skills",
+              style: Constants.largeTextStyle,
+            ),
+            const SizedBox(
+              height: 80,
+            ),
+            const SkillItem(
+              percentage: 70,
+              skill: "Flutter",
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            const SkillItem(
+              percentage: 90,
+              skill: "Dart",
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            const SkillItem(
+              percentage: 60,
+              skill: "Java",
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            const SkillItem(
+              percentage: 70,
+              skill: "HTML",
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            const SkillItem(
+              percentage: 75,
+              skill: "Java",
+            ),
+          ],
+        ),
       ),
     );
   }

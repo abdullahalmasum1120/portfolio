@@ -6,7 +6,7 @@ class MyIcon extends StatefulWidget {
   final String source;
   final Color hoverColor;
   final Color color;
-  final Function(PointerEnterEvent event) onTap;
+  final VoidCallback onTap;
 
   const MyIcon({
     Key? key,
@@ -26,6 +26,7 @@ class _MyIconState extends State<MyIcon> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
       onHover: (PointerHoverEvent event) {
         setState(() {
           isHovered = true;
@@ -37,8 +38,9 @@ class _MyIconState extends State<MyIcon> {
         });
       },
       child: GestureDetector(
-        onTap: () => widget.onTap,
-        child: Container(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          transform: isHovered ? Matrix4.translationValues(0, 2, 0) : Matrix4.translationValues(0, 0, 0),
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: widget.color,
@@ -49,6 +51,7 @@ class _MyIconState extends State<MyIcon> {
                   : Border.all(
                       color: Theme.of(context).scaffoldBackgroundColor),
               borderRadius: BorderRadius.circular(8)),
+          duration: const Duration(milliseconds: 400),
           child: SvgPicture.asset(
             widget.source,
             color: Colors.white,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/pages/sections/header/widgets/drawer_icon.dart';
 import 'package:portfolio/pages/sections/header/widgets/header_item.dart';
-import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/assets.dart';
+import 'package:portfolio/utils/theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class SliverHeader extends StatelessWidget {
@@ -14,17 +14,15 @@ class SliverHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: KColors.primary,
       pinned: true,
       floating: true,
-      automaticallyImplyLeading: false,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: SvgPicture.asset(KIcons.avatar),
+      ),
       title: Text(
-        "Portfolio.",
-        style: GoogleFonts.raleway(
-          fontSize: 36,
-          color: KColors.white,
-          fontWeight: FontWeight.w800,
-        ),
+        "Portfolio",
+        style: MyTheme.defaultTextStyle,
       ),
       actions: [
         ResponsiveVisibility(

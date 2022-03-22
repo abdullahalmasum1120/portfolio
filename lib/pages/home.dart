@@ -19,9 +19,9 @@ class Home extends StatelessWidget {
         slivers: [
           SliverHeader(),
           SliverIntro(),
-          SliverProjects(),
-          SliverSkills(),
-          // SliverExperiences(),
+          // SliverProjects(),
+          // SliverSkills(),
+          // // SliverExperiences(),
           // FooterSection(),
         ],
       ),

@@ -3,7 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/widgets/my_button.dart';
 import 'package:portfolio/pages/widgets/my_icon.dart';
-import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/assets.dart';
+import 'package:portfolio/utils/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LeftIntro extends StatelessWidget {
   const LeftIntro({Key? key}) : super(key: key);
@@ -12,7 +14,6 @@ class LeftIntro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height,
       alignment: Alignment.center,
       child: Container(
         padding: const EdgeInsets.all(32.0),
@@ -22,35 +23,35 @@ class LeftIntro extends StatelessWidget {
           children: [
             Text(
               "Hi there, I'm",
-              style: Constants.defaultTextStyle,
+              style: MyTheme.defaultTextStyle,
             ),
             const SizedBox(
               height: 8.0,
             ),
             Text(
               "Abdullah Al Masum",
-              style: Constants.xLargeTextStyle,
+              style: MyTheme.xLargeTextStyle,
             ),
             const SizedBox(
-              height: 16.0,
+              height: 8.0,
             ),
             AnimatedTextKit(
               repeatForever: true,
               animatedTexts: [
                 TyperAnimatedText(
                   "Android &",
-                  textStyle: Constants.largeTextStyle,
+                  textStyle: MyTheme.largeTextStyle,
                   speed: const Duration(milliseconds: 100),
                 ),
                 TyperAnimatedText(
                   "Flutter Developer",
-                  textStyle: Constants.largeTextStyle,
+                  textStyle: MyTheme.largeTextStyle,
                   speed: const Duration(milliseconds: 100),
                 ),
               ],
             ),
             const SizedBox(
-              height: 8.0,
+              height: 16.0,
             ),
             Text(
               "Android application developer with flutter,\n"
@@ -64,37 +65,59 @@ class LeftIntro extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 MyIcon(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () => launch("https://github.com/abdullahalmasum1120"),
                   hoverColor: Colors.cyan,
                   color: Colors.black,
-                  source: 'assets/icons/github.svg',
+                  source: KIcons.github,
                 ),
                 const SizedBox(
                   width: 16,
                 ),
                 MyIcon(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () =>
+                      launch("https://www.linkedin.com/in/abdullahalmasum1120"),
                   hoverColor: Colors.cyan,
                   color: Colors.black,
-                  source: 'assets/icons/linkedin.svg',
+                  source: KIcons.linkedin,
                 ),
                 const SizedBox(
                   width: 16,
                 ),
                 MyIcon(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () => launch(
+                      "https://api.whatsapp.com/send/?phone=(8801538380773)"),
                   hoverColor: Colors.cyan,
                   color: Colors.black,
-                  source: 'assets/icons/mail.svg',
+                  source: KIcons.whatsapp,
                 ),
                 const SizedBox(
                   width: 16,
                 ),
                 MyIcon(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () {
+                    final Uri params = Uri(
+                        scheme: 'mailto',
+                        path: 'abdullahalmasum1120@gmail.com',
+                        queryParameters: {
+                          'subject': 'Your Subject here',
+                          'body': ''
+                        });
+                    String url = params.toString();
+                    launch(url);
+                  },
                   hoverColor: Colors.cyan,
                   color: Colors.black,
-                  source: 'assets/icons/facebook.svg',
+                  source: KIcons.mail,
+                ),
+                const SizedBox(
+                  width: 16,
+                ),
+                MyIcon(
+                  onTap: () =>
+                      launch("https://www.facebook.com/abdullahalmasum2000"),
+                  hoverColor: Colors.cyan,
+                  color: Colors.black,
+                  source: KIcons.facebook,
                 ),
               ],
             ),
@@ -105,7 +128,8 @@ class LeftIntro extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 MyButton(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () => launch(
+                      "https://docs.google.com/document/d/1viS1lwt8uncswW8Fn8rcjTyk9LsBWIla/edit?usp=sharing&ouid=114457075196417031116&rtpof=true&sd=true"),
                   text: "Download CV",
                   hoverColor: Colors.cyan,
                 ),
@@ -113,7 +137,17 @@ class LeftIntro extends StatelessWidget {
                   width: 8,
                 ),
                 MyButton(
-                  onTap: (PointerEnterEvent event) {},
+                  onTap: () {
+                    final Uri params = Uri(
+                        scheme: 'mailto',
+                        path: 'abdullahalmasum1120@gmail.com',
+                        queryParameters: {
+                          'subject': 'Your Subject here',
+                          'body': ''
+                        });
+                    String url = params.toString();
+                    launch(url);
+                  },
                   text: "Hire me",
                   hoverColor: Colors.cyan,
                 ),

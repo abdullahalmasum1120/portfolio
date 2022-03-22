@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/sections/project/widgets/project.dart';
-import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/pages/widgets/section_header.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class SliverProjects extends StatelessWidget {
@@ -11,18 +11,10 @@ class SliverProjects extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(48.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Projects",
-                  style: Constants.largeTextStyle,
-                )
-              ],
-            ),
+            const SectionHeader(name: "Projects"),
             const SizedBox(
               height: 48.0,
             ),
@@ -40,7 +32,7 @@ class SliverProjects extends StatelessWidget {
                         "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
                     github: "github",
                     downloadLink: "downloadLink",
-                    name: "name",
+                    name: "Plasma",
                   ),
                 ),
                 ResponsiveRowColumnItem(

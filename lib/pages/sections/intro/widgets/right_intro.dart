@@ -7,7 +7,6 @@ class RightIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
       width: double.infinity,
       alignment: Alignment.center,
       child: Container(

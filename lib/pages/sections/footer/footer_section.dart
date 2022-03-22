@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/pages/sections/footer/widgets/footer_item.dart';
+import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class FooterSection extends StatelessWidget {
@@ -8,57 +9,68 @@ class FooterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.amber,
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height,
-      child: ResponsiveRowColumn(
-        layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE)
-            ? ResponsiveRowColumnType.COLUMN
-            : ResponsiveRowColumnType.ROW,
-        rowMainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        rowCrossAxisAlignment: CrossAxisAlignment.end,
-        columnMainAxisAlignment: MainAxisAlignment.end,
-        columnCrossAxisAlignment: CrossAxisAlignment.center,
+    return SliverToBoxAdapter(
+      child: Column(
         children: [
-          ResponsiveRowColumnItem(
-            rowFlex: 1,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "Contacts",
+                  style: MyTheme.largeTextStyle,
+                ),
+              )
+            ],
+          ),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            width: double.infinity,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                FooterItem(
-                  title: 'WhatsApp',
-                  subtitle1: '+8801536411067',
-                  subtitle2: '',
-                  iconSrc: 'assets/icons/whatsapp.svg',
+                ResponsiveWrapper(
+                  maxWidth: 360,
+                  minWidth: 160,
+                  defaultScale: true,
+                  child: FooterItem(
+                    title: 'Location',
+                    subtitle: 'Mohammadpur, Dhaka',
+                    iconSrc: 'assets/icons/location.svg',
+                  ),
                 ),
-                FooterItem(
-                  title: 'Location',
-                  subtitle1: 'Mohammadpur, Dhaka',
-                  subtitle2: 'Matiranga, Khagrachari',
-                  iconSrc: 'assets/icons/location.svg',
-                )
+                ResponsiveWrapper(
+                  maxWidth: 360,
+                  minWidth: 160,
+                  defaultScale: true,
+                  child: FooterItem(
+                    title: 'Email',
+                    subtitle: 'abdullahalmasum1120@gmail.com',
+                    iconSrc: 'assets/icons/mail.svg',
+                  ),
+                ),
+                ResponsiveWrapper(
+                  maxWidth: 360,
+                  minWidth: 160,
+                  defaultScale: true,
+                  child: FooterItem(
+                    title: 'Phone',
+                    subtitle: '+8801538380773',
+                    iconSrc: 'assets/icons/phone.svg',
+                  ),
+                ),
               ],
             ),
           ),
-          ResponsiveRowColumnItem(
-            rowFlex: 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                FooterItem(
-                  title: 'Email',
-                  subtitle1: 'abdullahalmasum1120@gmail.com',
-                  subtitle2: 'abdullahalmasum7777@gmail.com',
-                  iconSrc: 'assets/icons/mail.svg',
-                ),
-                FooterItem(
-                  title: 'Phone',
-                  subtitle1: '+8801538380773',
-                  subtitle2: '+8801536411067',
-                  iconSrc: 'assets/icons/phone.svg',
-                )
-              ],
+          Container(
+            height: 80,
+            alignment: Alignment.center,
+            width: double.infinity,
+            color: KColors.primaryAccent,
+            child: Text(
+              "©All Rights Reserved by AAM",
+              style: MyTheme.smallTextStyle,
             ),
           ),
         ],

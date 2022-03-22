@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/widgets/my_icon.dart';
 import 'package:portfolio/utils/assets.dart';
 import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Project extends StatefulWidget {
@@ -43,20 +43,19 @@ class _ProjectState extends State<Project> {
       child: Container(
         height: 240.0,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(widget.image),
-            fit: BoxFit.cover,
-            colorFilter: isHovered
-                ? ColorFilter.mode(
-                    KColors.black.withOpacity(0.5), BlendMode.darken)
-                : null,
-          ),
-          border: Border.all(
-            width: 4.0,
-            color: KColors.secondary,
-          ),
-          borderRadius: BorderRadius.circular(16.0)
-        ),
+            image: DecorationImage(
+              image: NetworkImage(widget.image),
+              fit: BoxFit.cover,
+              colorFilter: isHovered
+                  ? ColorFilter.mode(
+                      KColors.black.withOpacity(0.5), BlendMode.darken)
+                  : null,
+            ),
+            border: Border.all(
+              width: 4.0,
+              color: KColors.secondary,
+            ),
+            borderRadius: BorderRadius.circular(16.0)),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -67,7 +66,7 @@ class _ProjectState extends State<Project> {
                 children: [
                   Text(
                     widget.name,
-                    style: Constants.defaultTextStyle,
+                    style: MyTheme.defaultTextStyle,
                   ),
                 ],
               ),
@@ -77,7 +76,7 @@ class _ProjectState extends State<Project> {
                   MyIcon(
                     source: KIcons.github,
                     hoverColor: KColors.secondary,
-                    onTap: (PointerEnterEvent event) =>
+                    onTap: () =>
                         launch(widget.github, webOnlyWindowName: "_blank"),
                     color: KColors.black,
                   ),
@@ -87,8 +86,8 @@ class _ProjectState extends State<Project> {
                   MyIcon(
                     source: KIcons.download,
                     hoverColor: KColors.secondary,
-                    onTap: (PointerEnterEvent event) =>
-                        launch(widget.downloadLink, webOnlyWindowName: "_blank"),
+                    onTap: () => launch(widget.downloadLink,
+                        webOnlyWindowName: "_blank"),
                     color: KColors.black,
                   ),
                 ],

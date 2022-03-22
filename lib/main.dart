@@ -1,17 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home.dart';
+import 'package:portfolio/utils/colors.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'utils/constants.dart';
+import 'utils/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: FirebaseOptions(
-        apiKey: Constants.firebaseConfig.apiKey,
-        appId: Constants.firebaseConfig.appId,
-        messagingSenderId: Constants.firebaseConfig.messagingSenderId,
-        projectId: Constants.firebaseConfig.projectId),
+        apiKey: MyTheme.firebaseConfig.apiKey,
+        appId: MyTheme.firebaseConfig.appId,
+        messagingSenderId: MyTheme.firebaseConfig.messagingSenderId,
+        projectId: MyTheme.firebaseConfig.projectId),
   );
   runApp(const MyApp());
 }
@@ -25,11 +26,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Abdullah Al Masum",
       theme: Theme.of(context).copyWith(
-        scaffoldBackgroundColor: const Color(0xFF07111A),
+        appBarTheme: MyTheme.appBarTheme,
+        scaffoldBackgroundColor: KColors.primary,
         textTheme: TextTheme(
-          bodyLarge: Constants.largeTextStyle,
-          bodyMedium: Constants.defaultTextStyle,
-          bodySmall: Constants.smallTextStyle,
+          titleMedium: MyTheme.largeTextStyle,
+          bodyLarge: MyTheme.largeTextStyle,
+          bodyMedium: MyTheme.defaultTextStyle,
+          bodySmall: MyTheme.smallTextStyle,
         ),
       ),
       builder: (context, widget) => ResponsiveWrapper.builder(

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <title>Asset 4</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <circle cx="50" cy="50" r="50" style="fill:#c2daf2" />
+            <path
+                d="M54.24,99.82A50,50,0,0,0,98.72,61.27L81.43,44l-6.29,4.74L65.63,39.2,46.11,58.12l-17-17-4.67,8.71L39.32,64.71,29.07,74.65Z"
+                style="fill:#94bde4" />
+            <path
+                d="M68,75.85H32a4.23,4.23,0,0,1-4.23-4.24V42.85l22-20.34L72.22,42.85V71.61A4.23,4.23,0,0,1,68,75.85Z"
+                style="fill:#497c9f" />
+            <path d="M49.89,22.61V75.85H68a4.23,4.23,0,0,0,4.23-4.24V42.85Z" style="fill:#396996" />
+            <polygon
+                points="50 24.33 75.53 49.86 81.43 43.97 50 12.54 18.57 43.97 24.47 49.87 50 24.33"
+                style="fill:#273c7a" />
+            <polygon
+                points="50 12.54 49.89 12.66 49.89 24.44 50 24.33 75.53 49.86 81.43 43.97 50 12.54"
+                style="fill:#1a1448" />
+            <rect x="44.44" y="55.56" width="11.11" height="20.29" style="fill:#273c7a" />
+            <rect x="49.89" y="55.56" width="5.67" height="20.29" style="fill:#1a1448" />
+        </g>
+    </g>
+</svg>

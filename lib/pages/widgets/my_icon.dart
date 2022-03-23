@@ -20,7 +20,7 @@ class MyIcon extends StatefulWidget {
   State<MyIcon> createState() => _MyIconState();
 }
 
-class _MyIconState extends State<MyIcon> {
+class _MyIconState extends State<MyIcon> with SingleTickerProviderStateMixin {
   bool isHovered = false;
 
   @override
@@ -39,24 +39,27 @@ class _MyIconState extends State<MyIcon> {
       },
       child: GestureDetector(
         onTap: widget.onTap,
-        child: AnimatedContainer(
-          transform: isHovered ? Matrix4.translationValues(0, 2, 0) : Matrix4.translationValues(0, 0, 0),
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-              color: widget.color,
-              border: isHovered
-                  ? Border.all(
-                      color: widget.hoverColor,
-                    )
-                  : Border.all(
-                      color: Theme.of(context).scaffoldBackgroundColor),
-              borderRadius: BorderRadius.circular(8)),
+        child: AnimatedScale(
+          scale: isHovered ? 1.2 : 1.0,
           duration: const Duration(milliseconds: 400),
-          child: SvgPicture.asset(
-            widget.source,
-            color: Colors.white,
-            height: 20,
-            width: 20,
+          child: AnimatedContainer(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+                color: widget.color,
+                border: isHovered
+                    ? Border.all(
+                        color: widget.hoverColor,
+                      )
+                    : Border.all(
+                        color: Theme.of(context).scaffoldBackgroundColor),
+                borderRadius: BorderRadius.circular(8)),
+            duration: const Duration(milliseconds: 400),
+            child: SvgPicture.asset(
+              widget.source,
+              color: Colors.white,
+              height: 20,
+              width: 20,
+            ),
           ),
         ),
       ),

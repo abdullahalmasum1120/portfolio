@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/colors.dart';
 
 class MyTheme {
-  static const FirebaseConfig firebaseConfig = FirebaseConfig();
   static AppBarTheme appBarTheme = AppBarTheme(
     color: KColors.primaryAccent,
     titleTextStyle: GoogleFonts.raleway(
@@ -38,16 +37,4 @@ class MyTheme {
     color: Colors.white,
     letterSpacing: 2.0,
   );
-}
-
-class FirebaseConfig {
-  final String apiKey = "AIzaSyC662mcy0QDZATOUBfPpEs368PSybg5YRk";
-  final String authDomain = "portfolio-affef.firebaseapp.com";
-  final String projectId = "portfolio-affef";
-  final String storageBucket = "portfolio-affef.appspot.com";
-  final String messagingSenderId = "36511653386";
-  final String appId = "1:36511653386:web:29073ad4d76c54ed7589f3";
-  final String measurementId = "G-VDXH1QYDKZ";
-
-  const FirebaseConfig();
 }

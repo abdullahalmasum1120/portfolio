@@ -1,18 +1,19 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/home.dart';
+import 'package:portfolio/pages/portfolio.dart';
 import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/constants.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'utils/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: FirebaseOptions(
-        apiKey: MyTheme.firebaseConfig.apiKey,
-        appId: MyTheme.firebaseConfig.appId,
-        messagingSenderId: MyTheme.firebaseConfig.messagingSenderId,
-        projectId: MyTheme.firebaseConfig.projectId),
+    options: const FirebaseOptions(
+        apiKey: FirebaseConfig.apiKey,
+        appId: FirebaseConfig.appId,
+        messagingSenderId: FirebaseConfig.messagingSenderId,
+        projectId: FirebaseConfig.projectId),
   );
   runApp(const MyApp());
 }
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: (context, widget) => ResponsiveWrapper.builder(
         const Home(),
-        defaultScale: true,
+        // defaultScale: true,
         breakpoints: [
           const ResponsiveBreakpoint.resize(500, name: MOBILE),
           const ResponsiveBreakpoint.resize(800, name: TABLET),

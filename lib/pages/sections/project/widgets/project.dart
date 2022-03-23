@@ -40,37 +40,45 @@ class _ProjectState extends State<Project> {
           isHovered = false;
         });
       },
-      child: Container(
-        height: 240.0,
-        decoration: BoxDecoration(
+      child: AnimatedContainer(
+        foregroundDecoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(widget.image),
               fit: BoxFit.cover,
-              colorFilter: isHovered
-                  ? ColorFilter.mode(
-                      KColors.black.withOpacity(0.5), BlendMode.darken)
-                  : null,
             ),
             border: Border.all(
               width: 4.0,
               color: KColors.secondary,
             ),
             borderRadius: BorderRadius.circular(16.0)),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.name,
-                    style: MyTheme.defaultTextStyle,
-                  ),
-                ],
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(),
+        duration: const Duration(milliseconds: 400),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 400),
+              opacity: isHovered ? 1 : 0,
+              child: Visibility(
+                visible: isHovered,
+                maintainState: true,
+                maintainAnimation: true,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.name,
+                      style: MyTheme.largeTextStyle,
+                    ),
+                  ],
+                ),
               ),
-              Row(
+            ),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 400),
+              opacity: isHovered ? 1 : 0,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   MyIcon(
@@ -92,8 +100,8 @@ class _ProjectState extends State<Project> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <title>Asset 2</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path d="M0,50a50,50,0,0,0,50,50l4.35-50L50,0A50,50,0,0,0,0,50Z" style="fill:#c2daf2" />
+            <path d="M50,0V100A50,50,0,0,0,50,0Z" style="fill:#94bde4" />
+            <path d="M8.7,50A41.34,41.34,0,0,0,50,91.3L54.35,50,50,8.7A41.34,41.34,0,0,0,8.7,50Z"
+                style="fill:#273c7a" />
+            <path d="M50,8.7V91.3A41.3,41.3,0,0,0,50,8.7Z" style="fill:#1a1448" />
+            <path
+                d="M43.48,28.26A6.52,6.52,0,0,0,50,34.78l2.17-6.52L50,21.74A6.52,6.52,0,0,0,43.48,28.26Z"
+                style="fill:#fff" />
+            <path d="M50,21.74v13a6.52,6.52,0,1,0,0-13Z" style="fill:#c2daf2" />
+            <polygon points="43.48 43.48 43.48 78.26 50 78.26 52.17 60.87 50 43.48 43.48 43.48"
+                style="fill:#fff" />
+            <rect x="50" y="43.48" width="6.52" height="34.78" style="fill:#c2daf2" />
+        </g>
+    </g>
+</svg>

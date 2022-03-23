@@ -15,4 +15,9 @@ class KIcons {
   static const String whatsapp = _icons + "whatsapp.svg";
   static const String download = _icons + "download.svg";
   static const String avatar = _icons + "avatar.svg";
+  static const String rightIntro = _icons + "right_intro.svg";
+  static const String home = _icons + "home.svg";
+  static const String projects = _icons + "projects.svg";
+  static const String skills = _icons + "skills.svg";
+  static const String about = _icons + "about.svg";
 }

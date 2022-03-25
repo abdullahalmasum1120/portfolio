@@ -7,16 +7,36 @@ import 'package:portfolio/pages/sections/home/home.dart';
 import 'package:portfolio/pages/sections/project/project_section.dart';
 import 'package:portfolio/pages/sections/skills/skills_section.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  late final ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawerEnableOpenDragGesture: false,
-      appBar: const NavigationHeader(),
+      appBar: NavigationHeader(scrollController: _scrollController),
       endDrawer: const MyDrawer(),
       body: ListView(
+        controller: _scrollController,
         children: const [
           HomeSection(),
           // SliverProjects(),

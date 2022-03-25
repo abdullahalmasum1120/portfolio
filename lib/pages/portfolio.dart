@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       endDrawerEnableOpenDragGesture: false,
       appBar: NavigationHeader(scrollController: _scrollController),
-      endDrawer: const MyDrawer(),
+      endDrawer: MyDrawer(controller: _scrollController),
       body: ListView(
         controller: _scrollController,
         children: const [

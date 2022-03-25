@@ -4,7 +4,12 @@ import 'package:portfolio/utils/assets.dart';
 import 'package:portfolio/utils/colors.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key? key}) : super(key: key);
+  final ScrollController controller;
+
+  const MyDrawer({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +19,13 @@ class MyDrawer extends StatelessWidget {
         children: [
           NavItem(
             text: "Home",
-            onTap: () {},
+            onTap: () => controller.animateTo(
+              0.0,
+              duration: const Duration(seconds: 500),
+              curve: Curves.fastOutSlowIn,
+            ),
             hoverColor: Colors.cyan,
-            iconSrc: KIcons.home,
+            iconSrc: KImage.home,
           ),
           const Divider(
             color: KColors.white,
@@ -26,7 +35,7 @@ class MyDrawer extends StatelessWidget {
             text: "Projects",
             onTap: () {},
             hoverColor: Colors.cyan,
-            iconSrc: KIcons.projects,
+            iconSrc: KImage.projects,
           ),
           const Divider(
             color: KColors.white,
@@ -36,7 +45,7 @@ class MyDrawer extends StatelessWidget {
             text: "Skills",
             onTap: () {},
             hoverColor: Colors.cyan,
-            iconSrc: KIcons.skills,
+            iconSrc: KImage.skills,
           ),
           const Divider(
             color: KColors.white,
@@ -46,7 +55,7 @@ class MyDrawer extends StatelessWidget {
             text: "About me",
             onTap: () {},
             hoverColor: Colors.cyan,
-            iconSrc: KIcons.about,
+            iconSrc: KImage.about,
           ),
           const Divider(
             color: KColors.white,

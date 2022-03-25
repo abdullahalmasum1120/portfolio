@@ -57,7 +57,7 @@ class _NavItemState extends State<NavItem> {
             child: Row(
               children: [
                 if (widget.iconSrc != null) ...[
-                  SvgPicture.asset(
+                  Image.asset(
                     widget.iconSrc!,
                     height: 28,
                     width: 28,

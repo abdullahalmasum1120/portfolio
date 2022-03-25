@@ -3,6 +3,12 @@ const String _icons = "assets/icons/";
 
 class KImage {
   static const String userImage = _images + "user_image.png";
+  static const String avatar = _images + "avatar.png";
+  static const String rightIntro = _images + "right_intro.png";
+  static const String home = _images + "home.png";
+  static const String projects = _images + "projects.png";
+  static const String skills = _images + "skills.png";
+  static const String about = _images + "about.png";
 }
 
 class KIcons {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/utils/assets.dart';
 
 class RightIntro extends StatelessWidget {
@@ -11,10 +10,10 @@ class RightIntro extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       alignment: Alignment.center,
-      child: SvgPicture.asset(
-        KIcons.rightIntro,
-        height: 400,
-        width: 400,
+      child: Image.asset(
+        KImage.rightIntro,
+        height: 500,
+        width: 500,
       ),
     );
   }

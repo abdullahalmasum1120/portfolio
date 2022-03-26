@@ -3,15 +3,15 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "index.html": "e590b6ce14a586651a80a586d8f56198",
-"/": "e590b6ce14a586651a80a586d8f56198",
+  "index.html": "e2927581a7218105d11042f58ae23cee",
+"/": "e2927581a7218105d11042f58ae23cee",
 "version.json": "009c9e65172e010890f7f65fde438006",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
 "canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
-"main.dart.js": "24a48ecc990ea2ff40619fc86ca3d7fc",
+"main.dart.js": "6ef572af2741fb5e29d33847df8c0340",
 "manifest.json": "e74af8957b5899dc6da961caee768ec9",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",

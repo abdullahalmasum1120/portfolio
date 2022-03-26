@@ -66,7 +66,7 @@ class LeftIntro extends StatelessWidget {
                 onTap: () => launch("https://github.com/abdullahalmasum1120"),
                 hoverColor: Colors.cyan,
                 color: Colors.black,
-                source: KIcons.github,
+                source: KIcons.home,
               ),
               const SizedBox(
                 width: 16,

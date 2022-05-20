@@ -10,8 +10,8 @@ class RightIntro extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       alignment: Alignment.center,
-      child: Image.asset(
-        KImage.rightIntro,
+      child: Image.network(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgE0r2_a_Ju7-C7EHdJzHvBSatrHbbm_cALQ&usqp=CAU",
         height: 500,
         width: 500,
       ),

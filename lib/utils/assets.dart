@@ -1,5 +1,6 @@
 const String _images = "assets/images/";
 const String _icons = "assets/icons/";
+const String _rives = "assets/rives/";
 
 class KImage {
   static const String userImage = _images + "user_image.png";
@@ -26,4 +27,8 @@ class KIcons {
   static const String projects = _icons + "projects.svg";
   static const String skills = _icons + "skills.svg";
   static const String about = _icons + "about.svg";
+}
+
+class KRivesAnim {
+  static const String rigntIntro = _rives + "right_intro.riv";
 }

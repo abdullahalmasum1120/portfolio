@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/assets.dart';
+import 'package:rive/rive.dart';
 
 class RightIntro extends StatelessWidget {
   const RightIntro({Key? key}) : super(key: key);
@@ -8,12 +9,12 @@ class RightIntro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: double.infinity,
+      height: MediaQuery.of(context).size.height,
       alignment: Alignment.center,
-      child: Image.network(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgE0r2_a_Ju7-C7EHdJzHvBSatrHbbm_cALQ&usqp=CAU",
-        height: 500,
-        width: 500,
+      padding: const EdgeInsets.all(16.0),
+      child: const RiveAnimation.asset(
+        KRivesAnim.rigntIntro,
+        fit: BoxFit.contain,
       ),
     );
   }

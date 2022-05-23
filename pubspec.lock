@@ -149,6 +149,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.3.1"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   http:
     dependency: transitive
     description:
@@ -303,13 +310,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  responsive_framework:
+  rive:
     dependency: "direct main"
     description:
-      name: responsive_framework
+      name: rive
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.7"
+    version: "0.8.4"
   sky_engine:
     dependency: transitive
     description: flutter

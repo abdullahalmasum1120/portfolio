@@ -1,12 +1,7 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/pages/sections/header/widgets/nav_item.dart';
-import 'package:portfolio/utils/assets.dart';
+import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/theme.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   final ScrollController scrollController;
@@ -19,18 +14,14 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 16.0),
-        child: Image.asset(KImage.avatar),
-      ),
+      leading: ScreenSize.isLarge(context) ?  Container():null,
       title: Text(
         "Portfolio",
         style: MyTheme.defaultTextStyle,
       ),
       actions: [
-        ResponsiveVisibility(
-          visible: true,
-          hiddenWhen: const [Condition.smallerThan(name: MOBILE)],
+        Visibility(
+          visible: !ScreenSize.isSmall(context),
           child: NavItem(
             text: "Home",
             onTap: () => scrollController.animateTo(
@@ -41,36 +32,32 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
             hoverColor: Colors.cyan,
           ),
         ),
-        ResponsiveVisibility(
-          visible: true,
-          hiddenWhen: const [Condition.smallerThan(name: MOBILE)],
+        Visibility(
+          visible: !ScreenSize.isSmall(context),
           child: NavItem(
             text: "Projects",
             onTap: () {},
             hoverColor: Colors.cyan,
           ),
         ),
-        ResponsiveVisibility(
-          visible: true,
-          hiddenWhen: const [Condition.smallerThan(name: MOBILE)],
+        Visibility(
+          visible: !ScreenSize.isSmall(context),
           child: NavItem(
             text: "Skills",
             onTap: () {},
             hoverColor: Colors.cyan,
           ),
         ),
-        ResponsiveVisibility(
-          visible: true,
-          hiddenWhen: const [Condition.smallerThan(name: MOBILE)],
+        Visibility(
+          visible: !ScreenSize.isSmall(context),
           child: NavItem(
             text: "About me",
             onTap: () {},
             hoverColor: Colors.cyan,
           ),
         ),
-        ResponsiveVisibility(
-          visible: false,
-          visibleWhen: const [Condition.smallerThan(name: MOBILE)],
+        Visibility(
+          visible: ScreenSize.isSmall(context),
           child: IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () => Scaffold.of(context).openEndDrawer(),

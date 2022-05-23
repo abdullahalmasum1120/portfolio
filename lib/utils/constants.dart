@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 abstract class FirebaseConfig {
   static const String apiKey = "AIzaSyC662mcy0QDZATOUBfPpEs368PSybg5YRk";
   static const String authDomain = "portfolio-affef.firebaseapp.com";
@@ -6,4 +8,19 @@ abstract class FirebaseConfig {
   static const String messagingSenderId = "36511653386";
   static const String appId = "1:36511653386:web:29073ad4d76c54ed7589f3";
   static const String measurementId = "G-VDXH1QYDKZ";
+}
+
+abstract class ScreenSize {
+  static bool isSmall(BuildContext context){
+    if(MediaQuery.of(context).size.width<500) return true;
+    return false;
+  }
+  static bool isMedium(BuildContext context){
+    if(MediaQuery.of(context).size.width>500 && MediaQuery.of(context).size.width<1000) return true;
+    return false;
+  }
+  static bool isLarge(BuildContext context){
+    if(MediaQuery.of(context).size.width>1000) return true;
+    return false;
+  }
 }

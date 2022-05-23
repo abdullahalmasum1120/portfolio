@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/sections/project/widgets/project.dart';
 import 'package:portfolio/pages/widgets/section_header.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class SliverProjects extends StatelessWidget {
   const SliverProjects({Key? key}) : super(key: key);

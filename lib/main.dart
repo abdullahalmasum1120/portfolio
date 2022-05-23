@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/portfolio.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/utils/constants.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'utils/theme.dart';
 
 Future<void> main() async {
@@ -36,15 +35,7 @@ class MyApp extends StatelessWidget {
           bodySmall: MyTheme.smallTextStyle,
         ),
       ),
-      builder: (context, widget) => ResponsiveWrapper.builder(
-        const Home(),
-        // defaultScale: true,
-        breakpoints: [
-          const ResponsiveBreakpoint.resize(500, name: MOBILE),
-          const ResponsiveBreakpoint.resize(800, name: TABLET),
-          const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-        ],
-      ),
+      home: const Home(),
     );
   }
 }

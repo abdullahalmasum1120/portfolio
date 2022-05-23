@@ -11,7 +11,7 @@ class HomeSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16.0),
-      child: !ScreenSize.isLarge(context)
+      child: ScreenSize.isMobile(context)
           ? Column(
               children: const [
                 LeftIntro(),

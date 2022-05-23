@@ -14,14 +14,14 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: ScreenSize.isLarge(context) ?  Container():null,
+      leading: !ScreenSize.isMobile(context) ? Container() : null,
       title: Text(
         "Portfolio",
         style: MyTheme.defaultTextStyle,
       ),
       actions: [
         Visibility(
-          visible: !ScreenSize.isSmall(context),
+          visible: !ScreenSize.isMobile(context),
           child: NavItem(
             text: "Home",
             onTap: () => scrollController.animateTo(
@@ -33,7 +33,7 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Visibility(
-          visible: !ScreenSize.isSmall(context),
+          visible: !ScreenSize.isMobile(context),
           child: NavItem(
             text: "Projects",
             onTap: () {},
@@ -41,7 +41,7 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Visibility(
-          visible: !ScreenSize.isSmall(context),
+          visible: !ScreenSize.isMobile(context),
           child: NavItem(
             text: "Skills",
             onTap: () {},
@@ -49,7 +49,7 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Visibility(
-          visible: !ScreenSize.isSmall(context),
+          visible: !ScreenSize.isMobile(context),
           child: NavItem(
             text: "About me",
             onTap: () {},
@@ -57,7 +57,7 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Visibility(
-          visible: ScreenSize.isSmall(context),
+          visible: ScreenSize.isMobile(context),
           child: IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () => Scaffold.of(context).openEndDrawer(),

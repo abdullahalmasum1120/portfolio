@@ -11,15 +11,15 @@ abstract class FirebaseConfig {
 }
 
 abstract class ScreenSize {
-  static bool isSmall(BuildContext context){
-    if(MediaQuery.of(context).size.width<500) return true;
+  static bool isMobile(BuildContext context){
+    if(MediaQuery.of(context).size.width<800) return true;
     return false;
   }
-  static bool isMedium(BuildContext context){
-    if(MediaQuery.of(context).size.width>500 && MediaQuery.of(context).size.width<1000) return true;
+  static bool isTablet(BuildContext context){
+    if(MediaQuery.of(context).size.width>800 && MediaQuery.of(context).size.width<1000) return true;
     return false;
   }
-  static bool isLarge(BuildContext context){
+  static bool isDesktop(BuildContext context){
     if(MediaQuery.of(context).size.width>1000) return true;
     return false;
   }

@@ -1,7 +1,7 @@
-// import 'package:flutter/material.dart';
-// import 'package:portfolio/pages/sections/footer/widgets/footer_item.dart';
-// import 'package:portfolio/utils/colors.dart';
-// import 'package:portfolio/utils/theme.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolio/pages/sections/footer/widgets/footer_item.dart';
+import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/theme.dart';
 //
 // class FooterSection extends StatelessWidget {
 //   const FooterSection({Key? key}) : super(key: key);

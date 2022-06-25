@@ -4,11 +4,11 @@ import 'package:portfolio/utils/assets.dart';
 import 'package:portfolio/utils/colors.dart';
 
 class MyDrawer extends StatelessWidget {
-  final ScrollController controller;
+  final ScrollController scrollController;
 
   const MyDrawer({
     Key? key,
-    required this.controller,
+    required this.scrollController,
   }) : super(key: key);
 
   @override
@@ -21,10 +21,13 @@ class MyDrawer extends StatelessWidget {
             text: "Home",
             onTap: () {
               Scaffold.of(context).closeEndDrawer();
-              controller.animateTo(
-                0.0,
-                duration: const Duration(seconds: 500),
-                curve: Curves.fastOutSlowIn,
+              Future.delayed(
+                const Duration(milliseconds: 500),
+                () => scrollController.animateTo(
+                  0.0,
+                  duration: const Duration(seconds: 500),
+                  curve: Curves.fastOutSlowIn,
+                ),
               );
             },
             hoverColor: Colors.cyan,

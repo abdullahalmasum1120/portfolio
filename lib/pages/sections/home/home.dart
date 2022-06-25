@@ -11,8 +11,8 @@ class HomeSection extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       padding: ScreenSize.isMobile(context)
-          ? const EdgeInsets.all(16.0)
-          : const EdgeInsets.all(24.0),
+          ? const EdgeInsets.symmetric(horizontal: 24.0)
+          : const EdgeInsets.symmetric(horizontal: 60.0),
       width: double.infinity,
       height: ScreenSize.isMobile(context) ? size.height * 1.2 : size.height,
       child: Flex(

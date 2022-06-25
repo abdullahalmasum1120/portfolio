@@ -34,7 +34,7 @@ class _PortfolioState extends State<Portfolio> {
     return Scaffold(
       endDrawerEnableOpenDragGesture: false,
       appBar: NavigationHeader(scrollController: _scrollController),
-      endDrawer: MyDrawer(controller: _scrollController),
+      endDrawer: MyDrawer(scrollController: _scrollController),
       body: ListView(
         controller: _scrollController,
         children: const [

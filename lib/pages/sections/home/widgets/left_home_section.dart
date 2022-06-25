@@ -13,7 +13,7 @@ class LeftIntro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height,
+      height: double.infinity,
       alignment: Alignment.centerLeft,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class LeftIntro extends StatelessWidget {
                 textStyle: ScreenSize.isMobile(context)
                     ? Theme.of(context).textTheme.titleSmall
                     : Theme.of(context).textTheme.titleMedium,
-                speed: const Duration(milliseconds: 400),
+                speed: const Duration(milliseconds: 200),
               ),
             ],
           ),

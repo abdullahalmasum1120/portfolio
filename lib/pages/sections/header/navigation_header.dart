@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/sections/header/widgets/nav_item.dart';
 import 'package:portfolio/utils/constants.dart';
-import 'package:portfolio/utils/theme.dart';
 
 class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   final ScrollController scrollController;
@@ -14,16 +13,16 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: ScreenSize.isMobile(context)
-          ? Container(
-              padding: const EdgeInsets.only(left: 16.0),
-            )
-          : Container(
-              padding: const EdgeInsets.only(left: 24.0),
-            ),
-      title: Text(
-        "Portfolio",
-        style: Theme.of(context).textTheme.titleSmall,
+      leading: null,
+      automaticallyImplyLeading: false,
+      title: Padding(
+        padding: ScreenSize.isMobile(context)
+            ? const EdgeInsets.only(left: 12.0)
+            : const EdgeInsets.only(left: 48.0),
+        child: Text(
+          "Portfolio",
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
       ),
       actions: [
         Visibility(

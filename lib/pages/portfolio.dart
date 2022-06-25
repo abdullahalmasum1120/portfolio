@@ -7,14 +7,14 @@ import 'package:portfolio/pages/sections/home/home.dart';
 import 'package:portfolio/pages/sections/project/project_section.dart';
 import 'package:portfolio/pages/sections/skills/skills_section.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Portfolio extends StatefulWidget {
+  const Portfolio({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Portfolio> createState() => _PortfolioState();
 }
 
-class _HomeState extends State<Home> {
+class _PortfolioState extends State<Portfolio> {
   late final ScrollController _scrollController;
 
   @override

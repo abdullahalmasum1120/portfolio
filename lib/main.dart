@@ -28,14 +28,9 @@ class MyApp extends StatelessWidget {
       theme: Theme.of(context).copyWith(
         appBarTheme: MyTheme.appBarTheme,
         scaffoldBackgroundColor: KColors.primary,
-        textTheme: TextTheme(
-          titleMedium: MyTheme.largeTextStyle,
-          bodyLarge: MyTheme.largeTextStyle,
-          bodyMedium: MyTheme.defaultTextStyle,
-          bodySmall: MyTheme.smallTextStyle,
-        ),
+        textTheme: MyTheme.textTheme,
       ),
-      home: const Home(),
+      home: const Portfolio(),
     );
   }
 }

@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 abstract class FirebaseConfig {
   static const String apiKey = "AIzaSyC662mcy0QDZATOUBfPpEs368PSybg5YRk";
@@ -11,16 +12,60 @@ abstract class FirebaseConfig {
 }
 
 abstract class ScreenSize {
-  static bool isMobile(BuildContext context){
-    if(MediaQuery.of(context).size.width<800) return true;
+  static bool isMobile(BuildContext context) {
+    if (MediaQuery.of(context).size.width < 800) return true;
     return false;
   }
-  static bool isTablet(BuildContext context){
-    if(MediaQuery.of(context).size.width>800 && MediaQuery.of(context).size.width<1000) return true;
+
+  static bool isTablet(BuildContext context) {
+    if (MediaQuery.of(context).size.width >= 800 &&
+        MediaQuery.of(context).size.width <= 1000) return true;
     return false;
   }
-  static bool isDesktop(BuildContext context){
-    if(MediaQuery.of(context).size.width>1000) return true;
+
+  static bool isDesktop(BuildContext context) {
+    if (MediaQuery.of(context).size.width > 1000) return true;
     return false;
   }
+}
+
+final TextStyle _textStyle = GoogleFonts.raleway();
+
+abstract class KTextStyle {
+  static final TextStyle titleLarge = _textStyle.copyWith(
+    fontSize: 36,
+    fontWeight: FontWeight.w900,
+    letterSpacing: 2,
+    color: Colors.white,
+  );
+  static final TextStyle titleMedium = _textStyle.copyWith(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 2,
+    color: Colors.white,
+  );
+  static final TextStyle titleSmall = _textStyle.copyWith(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 2,
+    color: Colors.white,
+  );
+  static final TextStyle bodyLarge = _textStyle.copyWith(
+    fontSize: 18,
+    fontWeight: FontWeight.normal,
+    letterSpacing: 1.2,
+    color: Colors.white,
+  );
+  static final TextStyle bodyMedium = _textStyle.copyWith(
+    fontSize: 16,
+    letterSpacing: 1.2,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
+  static final TextStyle bodySmall = _textStyle.copyWith(
+    fontSize: 14,
+    letterSpacing: 1.2,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
 }

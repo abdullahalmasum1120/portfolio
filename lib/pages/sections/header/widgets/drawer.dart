@@ -19,11 +19,14 @@ class MyDrawer extends StatelessWidget {
         children: [
           NavItem(
             text: "Home",
-            onTap: () => controller.animateTo(
-              0.0,
-              duration: const Duration(seconds: 500),
-              curve: Curves.fastOutSlowIn,
-            ),
+            onTap: () {
+              Scaffold.of(context).closeEndDrawer();
+              controller.animateTo(
+                0.0,
+                duration: const Duration(seconds: 500),
+                curve: Curves.fastOutSlowIn,
+              );
+            },
             hoverColor: Colors.cyan,
             iconSrc: KImage.home,
           ),

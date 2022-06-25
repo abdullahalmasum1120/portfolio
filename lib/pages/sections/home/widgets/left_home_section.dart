@@ -1,9 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/pages/widgets/my_button.dart';
 import 'package:portfolio/pages/widgets/my_icon.dart';
 import 'package:portfolio/utils/assets.dart';
-import 'package:portfolio/utils/theme.dart';
+import 'package:portfolio/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LeftIntro extends StatelessWidget {
@@ -21,14 +22,21 @@ class LeftIntro extends StatelessWidget {
         children: [
           Text(
             "Hi there, I'm",
-            style: MyTheme.defaultTextStyle,
+            style: ScreenSize.isMobile(context)
+                ? Theme.of(context).textTheme.bodyMedium
+                : Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(
             height: 8.0,
           ),
           Text(
             "Abdullah Al Masum",
-            style: MyTheme.xLargeTextStyle,
+            style: ScreenSize.isMobile(context)
+                ? Theme.of(context).textTheme.titleSmall
+                : ScreenSize.isTablet(context)
+                    ? Theme.of(context).textTheme.titleMedium
+                    : GoogleFonts.raleway(
+                        fontWeight: FontWeight.w900, fontSize: 36),
           ),
           const SizedBox(
             height: 8.0,
@@ -37,14 +45,11 @@ class LeftIntro extends StatelessWidget {
             repeatForever: true,
             animatedTexts: [
               TyperAnimatedText(
-                "Android &",
-                textStyle: MyTheme.largeTextStyle,
-                speed: const Duration(milliseconds: 100),
-              ),
-              TyperAnimatedText(
                 "Flutter Developer",
-                textStyle: MyTheme.largeTextStyle,
-                speed: const Duration(milliseconds: 100),
+                textStyle: ScreenSize.isMobile(context)
+                    ? Theme.of(context).textTheme.titleSmall
+                    : Theme.of(context).textTheme.titleMedium,
+                speed: const Duration(milliseconds: 400),
               ),
             ],
           ),
@@ -54,7 +59,9 @@ class LeftIntro extends StatelessWidget {
           Text(
             "Android application developer with flutter,\n"
             "having experience with Native android",
-            style: Theme.of(context).textTheme.bodySmall,
+            style: ScreenSize.isMobile(context)
+                ? Theme.of(context).textTheme.bodySmall
+                : Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(
             height: 32,

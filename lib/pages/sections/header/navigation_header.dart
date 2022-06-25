@@ -17,7 +17,7 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
       leading: !ScreenSize.isMobile(context) ? Container() : null,
       title: Text(
         "Portfolio",
-        style: MyTheme.defaultTextStyle,
+        style: Theme.of(context).textTheme.titleSmall,
       ),
       actions: [
         Visibility(

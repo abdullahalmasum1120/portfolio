@@ -8,28 +8,25 @@ class HomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
+      padding: const EdgeInsets.all(8.0),
       width: double.infinity,
-      padding: const EdgeInsets.all(16.0),
-      child: ScreenSize.isMobile(context)
-          ? Column(
-              children: const [
-                LeftIntro(),
-                RightIntro(),
-              ],
-            )
-          : Row(
-              children: const [
-                Expanded(
-                  child: LeftIntro(),
-                  flex: 3,
-                ),
-                Expanded(
-                  child: RightIntro(),
-                  flex: 2,
-                ),
-              ],
-            ),
+      height: ScreenSize.isMobile(context) ? size.height * 1.2 : size.height,
+      child: Flex(
+        direction:
+            ScreenSize.isDesktop(context) ? Axis.horizontal : Axis.vertical,
+        children: const [
+          Flexible(
+            child: LeftIntro(),
+            flex: 4,
+          ),
+          Flexible(
+            child: RightIntro(),
+            flex: 3,
+          ),
+        ],
+      ),
     );
   }
 }

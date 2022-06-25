@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/widgets/my_icon.dart';
 import 'package:portfolio/utils/assets.dart';
 import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -69,7 +70,11 @@ class _ProjectState extends State<Project> {
                   children: [
                     Text(
                       widget.name,
-                      style: MyTheme.largeTextStyle,
+                      style: ScreenSize.isMobile(context)
+                          ? Theme.of(context).textTheme.titleSmall
+                          : ScreenSize.isTablet(context)
+                              ? Theme.of(context).textTheme.titleMedium
+                              : Theme.of(context).textTheme.titleLarge,
                     ),
                   ],
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/constants.dart';
 
 class NavItem extends StatefulWidget {
   final Color hoverColor;
@@ -67,7 +68,9 @@ class _NavItemState extends State<NavItem> {
                 ],
                 Text(
                   widget.text,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: ScreenSize.isDesktop(context)
+                      ? Theme.of(context).textTheme.bodyLarge
+                      : Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),

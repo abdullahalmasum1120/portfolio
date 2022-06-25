@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/constants.dart';
 
 class MyButton extends StatefulWidget {
   final String text;
@@ -55,7 +56,9 @@ class _MyButtonState extends State<MyButton> {
           duration: const Duration(milliseconds: 400),
           child: Text(
             widget.text,
-            style: Theme.of(context).textTheme.bodySmall,
+            style: ScreenSize.isMobile(context)
+                ? Theme.of(context).textTheme.bodySmall
+                : Theme.of(context).textTheme.bodyMedium,
           ),
         ),
       ),

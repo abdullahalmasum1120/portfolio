@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/sections/skills/widgets/skill_item.dart';
+import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/theme.dart';
 
 class SliverSkills extends StatelessWidget {
@@ -15,7 +16,11 @@ class SliverSkills extends StatelessWidget {
           children: [
             Text(
               "Skills",
-              style: MyTheme.largeTextStyle,
+              style: ScreenSize.isMobile(context)
+                  ? Theme.of(context).textTheme.titleSmall
+                  : ScreenSize.isTablet(context)
+                      ? Theme.of(context).textTheme.titleMedium
+                      : Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
               height: 80,

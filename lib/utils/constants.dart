@@ -29,42 +29,38 @@ abstract class ScreenSize {
   }
 }
 
-final TextStyle _textStyle = GoogleFonts.raleway();
+final TextStyle _textStyle = GoogleFonts.raleway(
+  color: Colors.white,
+);
 
 abstract class KTextStyle {
   static final TextStyle titleLarge = _textStyle.copyWith(
     fontSize: 36,
     fontWeight: FontWeight.w900,
     letterSpacing: 2,
-    color: Colors.white,
   );
   static final TextStyle titleMedium = _textStyle.copyWith(
     fontSize: 28,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w800,
     letterSpacing: 2,
-    color: Colors.white,
   );
   static final TextStyle titleSmall = _textStyle.copyWith(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     letterSpacing: 2,
-    color: Colors.white,
   );
   static final TextStyle bodyLarge = _textStyle.copyWith(
     fontSize: 18,
     fontWeight: FontWeight.normal,
     letterSpacing: 1.2,
-    color: Colors.white,
   );
   static final TextStyle bodyMedium = _textStyle.copyWith(
     fontSize: 16,
     letterSpacing: 1.2,
     fontWeight: FontWeight.normal,
-    color: Colors.white,
   );
   static final TextStyle bodySmall = _textStyle.copyWith(
     fontSize: 14,
-    letterSpacing: 1.2,
     fontWeight: FontWeight.normal,
     color: Colors.white,
   );

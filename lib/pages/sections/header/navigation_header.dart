@@ -14,7 +14,13 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: !ScreenSize.isMobile(context) ? Container() : null,
+      leading: ScreenSize.isMobile(context)
+          ? Container(
+              padding: const EdgeInsets.only(left: 16.0),
+            )
+          : Container(
+              padding: const EdgeInsets.only(left: 24.0),
+            ),
       title: Text(
         "Portfolio",
         style: Theme.of(context).textTheme.titleSmall,

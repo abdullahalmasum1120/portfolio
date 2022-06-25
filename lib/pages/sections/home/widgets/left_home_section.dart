@@ -14,7 +14,7 @@ class LeftIntro extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height,
-      alignment: Alignment.center,
+      alignment: Alignment.centerLeft,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,

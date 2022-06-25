@@ -31,7 +31,7 @@ class LeftIntro extends StatelessWidget {
           Text(
             "Abdullah Al Masum",
             style: ScreenSize.isMobile(context)
-                ? Theme.of(context).textTheme.bodyMedium
+                ? Theme.of(context).textTheme.titleMedium
                 : Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(

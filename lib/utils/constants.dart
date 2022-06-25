@@ -46,7 +46,7 @@ abstract class KTextStyle {
   );
   static final TextStyle titleSmall = _textStyle.copyWith(
     fontSize: 24,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
     letterSpacing: 2,
   );
   static final TextStyle bodyLarge = _textStyle.copyWith(

@@ -1,7 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/pages/widgets/my_button.dart';
 import 'package:portfolio/pages/widgets/my_icon.dart';
+import 'package:portfolio/provider/user_provider.dart';
 import 'package:portfolio/utils/assets.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,26 +30,47 @@ class LeftIntro extends StatelessWidget {
           const SizedBox(
             height: 8.0,
           ),
-          Text(
-            "Abdullah Al Masum",
-            style: ScreenSize.isMobile(context)
-                ? Theme.of(context).textTheme.titleMedium
-                : Theme.of(context).textTheme.titleLarge,
+          Consumer(
+            builder: (BuildContext context, WidgetRef ref, Widget? child) {
+              return ref.watch(userProvider).when(
+                  data: (data) {
+                    return Text(
+                      data.name ?? "",
+                      style: ScreenSize.isMobile(context)
+                          ? Theme.of(context).textTheme.titleMedium
+                          : Theme.of(context).textTheme.titleLarge,
+                    );
+                  },
+                  error: (err, trace) => const Text("username"),
+                  loading: () => const SizedBox());
+            },
           ),
           const SizedBox(
             height: 8.0,
           ),
-          AnimatedTextKit(
-            repeatForever: true,
-            animatedTexts: [
-              TyperAnimatedText(
-                "Flutter Developer",
-                textStyle: ScreenSize.isMobile(context)
-                    ? Theme.of(context).textTheme.titleSmall
-                    : Theme.of(context).textTheme.titleMedium,
-                speed: const Duration(milliseconds: 200),
-              ),
-            ],
+          Consumer(
+            builder: (BuildContext context, WidgetRef ref, Widget? child) {
+              return ref.watch(userProvider).when(
+                  data: (data) {
+                    List<TypewriterAnimatedText> animatedTexts =
+                        <TypewriterAnimatedText>[];
+                    for (String skill in data.titles!) {
+                      animatedTexts.add(TypewriterAnimatedText(
+                        skill,
+                        textStyle: ScreenSize.isMobile(context)
+                            ? Theme.of(context).textTheme.titleSmall
+                            : Theme.of(context).textTheme.titleMedium,
+                        speed: const Duration(milliseconds: 200),
+                      ));
+                    }
+                    return AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: animatedTexts,
+                    );
+                  },
+                  error: (error, trace) => const Text("subtitile here"),
+                  loading: () => const SizedBox());
+            },
           ),
           const SizedBox(
             height: 16.0,
@@ -65,60 +88,74 @@ class LeftIntro extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              MyIcon(
-                onTap: () => launch("https://github.com/abdullahalmasum1120"),
-                hoverColor: Colors.cyan,
-                color: Colors.black,
-                source: KIcons.github,
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              MyIcon(
-                onTap: () =>
-                    launch("https://www.linkedin.com/in/abdullahalmasum1120"),
-                hoverColor: Colors.cyan,
-                color: Colors.black,
-                source: KIcons.linkedin,
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              MyIcon(
-                onTap: () => launch(
-                    "https://api.whatsapp.com/send/?phone=(8801538380773)"),
-                hoverColor: Colors.cyan,
-                color: Colors.black,
-                source: KIcons.whatsapp,
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              MyIcon(
-                onTap: () {
-                  final Uri params = Uri(
-                      scheme: 'mailto',
-                      path: 'abdullahalmasum1120@gmail.com',
-                      queryParameters: {
-                        'subject': 'Your Subject here',
-                        'body': ''
-                      });
-                  String url = params.toString();
-                  launch(url);
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyIcon(
+                          onTap: () => launch(data.socialLinks!.github ?? ""),
+                          hoverColor: Colors.cyan,
+                          color: Colors.black,
+                          source: KIcons.github,
+                        );
+                      },
+                      error: (err, trace) => const Text("github"),
+                      loading: () => const SizedBox());
                 },
-                hoverColor: Colors.cyan,
-                color: Colors.black,
-                source: KIcons.mail,
               ),
               const SizedBox(
                 width: 16,
               ),
-              MyIcon(
-                onTap: () =>
-                    launch("https://www.facebook.com/abdullahalmasum2000"),
-                hoverColor: Colors.cyan,
-                color: Colors.black,
-                source: KIcons.facebook,
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyIcon(
+                          onTap: () => launch(data.socialLinks!.linkedin ?? ""),
+                          hoverColor: Colors.cyan,
+                          color: Colors.black,
+                          source: KIcons.linkedin,
+                        );
+                      },
+                      error: (err, trace) => const Text("linkedin"),
+                      loading: () => const SizedBox());
+                },
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyIcon(
+                          onTap: () => launch(data.socialLinks!.whatsapp ?? ""),
+                          hoverColor: Colors.cyan,
+                          color: Colors.black,
+                          source: KIcons.whatsapp,
+                        );
+                      },
+                      error: (err, trace) => const Text("whatsapp"),
+                      loading: () => const SizedBox());
+                },
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyIcon(
+                          onTap: () => launch(data.socialLinks!.facebook ?? ""),
+                          hoverColor: Colors.cyan,
+                          color: Colors.black,
+                          source: KIcons.facebook,
+                        );
+                      },
+                      error: (err, trace) => const Text("facebook"),
+                      loading: () => const SizedBox());
+                },
               ),
             ],
           ),
@@ -128,29 +165,46 @@ class LeftIntro extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              MyButton(
-                onTap: () => launch(
-                    "https://docs.google.com/document/d/1viS1lwt8uncswW8Fn8rcjTyk9LsBWIla/edit?usp=sharing&ouid=114457075196417031116&rtpof=true&sd=true"),
-                text: "Download CV",
-                hoverColor: Colors.cyan,
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyButton(
+                          onTap: () => launch(data.resume ?? ""),
+                          text: "Download CV",
+                          hoverColor: Colors.cyan,
+                        );
+                      },
+                      error: (err, trace) => const Text("Resume download link"),
+                      loading: () => const SizedBox());
+                },
               ),
               const SizedBox(
                 width: 8,
               ),
-              MyButton(
-                onTap: () {
-                  final Uri params = Uri(
-                      scheme: 'mailto',
-                      path: 'abdullahalmasum1120@gmail.com',
-                      queryParameters: {
-                        'subject': 'Your Subject here',
-                        'body': ''
-                      });
-                  String url = params.toString();
-                  launch(url);
+              Consumer(
+                builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                  return ref.watch(userProvider).when(
+                      data: (data) {
+                        return MyButton(
+                          onTap: () {
+                            final Uri params = Uri(
+                                scheme: 'mailto',
+                                path: data.email,
+                                queryParameters: {
+                                  'subject': 'Your Subject here',
+                                  'body': ''
+                                });
+                            String url = params.toString();
+                            launch(url);
+                          },
+                          text: "Hire me",
+                          hoverColor: Colors.cyan,
+                        );
+                      },
+                      error: (err, trace) => const Text("Email Link"),
+                      loading: () => const SizedBox());
                 },
-                text: "Hire me",
-                hoverColor: Colors.cyan,
               ),
             ],
           ),

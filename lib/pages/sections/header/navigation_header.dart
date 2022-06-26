@@ -1,4 +1,6 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/pages/sections/header/widgets/nav_item.dart';
 import 'package:portfolio/utils/constants.dart';
 
@@ -19,9 +21,18 @@ class NavigationHeader extends StatelessWidget implements PreferredSizeWidget {
         padding: ScreenSize.isMobile(context)
             ? const EdgeInsets.only(left: 12.0)
             : const EdgeInsets.only(left: 48.0),
-        child: Text(
-          "Portfolio",
-          style: Theme.of(context).textTheme.titleSmall,
+        child: AnimatedTextKit(
+          totalRepeatCount: 1,
+          animatedTexts: [
+            TypewriterAnimatedText(
+              ">_aam",
+              textStyle: const TextStyle(
+                fontFamily: 'EastmanAlternate',
+                fontSize: 32,
+              ),
+              speed: const Duration(milliseconds: 500),
+            ),
+          ],
         ),
       ),
       actions: [

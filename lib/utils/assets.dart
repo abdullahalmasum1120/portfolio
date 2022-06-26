@@ -10,6 +10,7 @@ class KImage {
   static const String projects = _images + "projects.png";
   static const String skills = _images + "skills.png";
   static const String about = _images + "about.png";
+  static const String logo = _images + "logo.png";
 }
 
 class KIcons {
